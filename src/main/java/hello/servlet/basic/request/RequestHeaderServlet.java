@@ -9,14 +9,6 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-/**
- * 1. 파라미터 전송 기능
- * http://localhost:8080/request-param?username=hello&age=20
- * <p>
- * 2. 동일한 파라미터 전송 가능
- * http://localhost:8080/request-param?username=hello&username=kim&age=20
- */
-
 @WebServlet(name = "httpHeaderServlet", urlPatterns = "/request-header")
 public class RequestHeaderServlet extends HttpServlet {
 
