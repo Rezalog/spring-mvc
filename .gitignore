@@ -30,7 +30,7 @@ out/
 !**/src/test/**/out/
 
 .tmp/
-build.gradle
+#build.gradle
 caches/
 daemon/
 
