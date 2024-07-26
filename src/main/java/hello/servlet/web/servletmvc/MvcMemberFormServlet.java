@@ -25,12 +25,12 @@ import java.io.IOException;
  * forward 는 서버 내부에서 일어나는 호출이기 때문에 클라이언트가 전혀 인지하지 못한다.(1번 요청)
  * */
 
-@WebServlet(name = "mvcMemberFormServlet", urlPatterns = "servlet-mvc/members/new-form")
+@WebServlet(name = "mvcMemberFormServlet", urlPatterns = "/servlet-mvc/members/new-form")
 public class MvcMemberFormServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String viewPath = "/WEB-INF/views/new-form.jsp";
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher(viewPath); // requestDispaatcher가 Controller
-        requestDispatcher.forward(request, response); //
+        String viewPath = "/WEB-INF/views/new-form.jsp"; // WEB-INF의 view 페이지들은 외부에서 호출이 불가능하도록하고, controller 로 접근
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher(viewPath); // requestDispatcher 가 Controller
+        requestDispatcher.forward(request, response); //s
     }
 }
