@@ -1,11 +1,12 @@
 package hello.servlet.web.frontcontroller;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class ModelView {
 
     private String viewName;
-    private Map<String, Object> model;
+    private Map<String, Object> model = new HashMap<>();
 
     // 생성자(view 만)
     public ModelView(String viewName) {
