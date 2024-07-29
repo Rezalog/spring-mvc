@@ -35,12 +35,17 @@ public class ControllerV3HandlerAdapter implements MyHandlerAdapter {
     public ModelView handle(HttpServletRequest request, HttpServletResponse response, Object handler) throws IOException, ServletException {
         ControllerV3 controller = (ControllerV3) handler;
 
+        Map<String, String> paramMap = createParamMap(request);
+
+        ModelView mv = controller.process(paramMap);
+        return mv;
+    }
+
+    private Map<String, String> createParamMap(HttpServletRequest request) {
         Map<String, String> paramMap = new HashMap<>();
 
         request.getParameterNames().asIterator()
                         .forEachRemaining(paramName -> paramMap.put(paramName, request.getParameter(paramName)));
-
-        ModelView mv = controller.process(paramMap);
-        return mv;
+        return paramMap;
     }
 }
