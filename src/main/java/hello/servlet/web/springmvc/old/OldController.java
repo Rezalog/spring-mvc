@@ -56,3 +56,8 @@ public class OldController implements Controller {
         return new ModelAndView("new-form");
     }
 }
+/*
+* 스프링 부트는 InternalResourceViewResolver 라는 뷰 리졸버를 자동으로 등록하는데, 이때
+application.properties 에 등록한 spring.mvc.view.prefix , spring.mvc.view.suffix 설정 정
+보를 사용해서 등록한다.
+* */
