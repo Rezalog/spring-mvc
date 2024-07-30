@@ -28,6 +28,16 @@ import org.springframework.web.servlet.mvc.Controller;
  * 1 = HttpRequestHandlerAdapter : HttpRequestHandler 처리
  * 2 = SimpleControllerHandlerAdapter : Controller 인터페이스(애노테이션X, 과거에 사용) 처리 (O)
  *
+ * 스프링 부트가 자동 등록하는 뷰 리졸버
+ * (실제로는 더 많지만, 중요한 부분 위주로 설명하기 위해 일부 생략) ```
+ *
+ * - ViewResolver(뷰 리졸버)
+ * 1 = BeanNameViewResolver : 빈 이름으로 뷰를 찾아서 반환한다. (예: 엑셀 파일 생성 기능
+ * 에 사용)
+ * 2 = InternalResourceViewResolver : JSP를 처리할 수 있는 뷰를 반환한다.
+ * Thymeleaf 뷰 템플릿을 사용하면 ThymeleafViewResolver 를 등록해야 한다. 최근에는 라이브러리만 추
+ * 가하면 스프링 부트가 이런 작업도 모두 자동화해준다
+ *
  * ===========================
  * 1. 핸들러 매핑으로 핸들러 조회
  * - HandlerMapping 을 순서대로 실행해서, 핸들러를 찾는다.
